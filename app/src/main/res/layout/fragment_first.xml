@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp">
+
+            <EditText
+                android:id="@+id/editTextText"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_margin="15dp"
+                android:inputType="number"
+                android:maxLength="6"
+                android:hint="Enter Your Pin Code"
+                android:gravity="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/button_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/next"
+                android:layout_marginTop="30dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextText" />
+            />
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/progressBarHorizontal"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button_search"
+                app:lottie_autoPlay="true"
+                android:visibility="gone"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/halloween_pumpkins_nightmare" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="16dp"
+                tools:listitem="@layout/city_list_item"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/button_search" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
